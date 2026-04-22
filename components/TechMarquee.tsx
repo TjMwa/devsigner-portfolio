@@ -3,7 +3,7 @@ import { TECH_MARQUEE } from '../constants';
 
 const TechMarquee: React.FC = () => {
   return (
-    <div className="w-full py-10 bg-dark-900 border-y border-dark-700 overflow-hidden relative">
+    <div className="w-full py-10 bg-dark-900/50 backdrop-blur-sm border-y border-dark-700 overflow-hidden relative">
       <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-dark-900 via-dark-900/50 to-transparent z-10"></div>
       <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-dark-900 via-dark-900/50 to-transparent z-10"></div>
       

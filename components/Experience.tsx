@@ -5,7 +5,7 @@ import { EXPERIENCE } from '../constants';
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-24 bg-dark-800 relative">
+    <section id="experience" className="py-24 bg-dark-900 relative">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -28,9 +28,10 @@ const Experience: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               className="relative pl-8 md:pl-12"
             >
-              {/* Dot */}
-              <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-dark-900 border-4 border-accent-400 flex items-center justify-center">
-              </div>
+              <div className="bg-dark-800/50 backdrop-blur-md p-6 rounded-xl border border-dark-700 hover:border-accent-400/30 transition-all duration-300">
+                {/* Dot moved outside or kept relative to the card? I'll keep it absolute to the section timeline. */}
+                <div className="absolute -left-3 top-6 w-6 h-6 rounded-full bg-dark-900 border-4 border-accent-400 flex items-center justify-center z-10">
+                </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                 <h3 className="text-2xl font-display font-bold text-white">{job.role}</h3>
@@ -54,6 +55,7 @@ const Experience: React.FC = () => {
                   </li>
                 ))}
               </ul>
+              </div>
             </motion.div>
           ))}
         </div>

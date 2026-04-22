@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
   };
 
   const getInputClass = (fieldName: string) => {
-    const baseClass = "w-full bg-dark-800 border rounded-lg px-4 py-3 text-white focus:outline-none transition-colors hover-trigger";
+    const baseClass = "w-full bg-dark-900 border rounded-lg px-4 py-3 text-white focus:outline-none transition-colors hover-trigger";
     if (touched[fieldName] && errors[fieldName]) {
       return `${baseClass} border-red-500 focus:border-red-500`;
     }
@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-dark-800 relative overflow-hidden">
+    <section id="contact" className="py-24 bg-dark-900 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-400 via-blue-500 to-accent-400 opacity-20"></div>
 
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-dark-900 p-8 rounded-2xl border border-dark-700 relative"
+          className="bg-dark-800/50 backdrop-blur-md p-8 rounded-2xl border border-dark-700 relative"
         >
           {submitStatus === 'success' ? (
             <motion.div 

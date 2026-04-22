@@ -3,7 +3,6 @@ import CustomCursor from './components/CustomCursor';
 import MatrixBackground from './components/MatrixBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TechMarquee from './components/TechMarquee';
 import Portfolio from './components/Portfolio';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -20,7 +19,6 @@ function App() {
       
       <main>
         <Hero />
-        <TechMarquee />
         <Portfolio />
         <Experience />
         <Skills />

@@ -49,7 +49,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
       whileHover={{ y: -10, scale: 1.02 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className="group relative bg-dark-800 rounded-xl overflow-hidden border border-dark-700 hover:border-accent-400/50 transition-all duration-300 hover-trigger shadow-xl hover:shadow-accent-400/10"
+      className="group relative bg-dark-800/50 backdrop-blur-md rounded-xl overflow-hidden border border-dark-700 hover:border-accent-400/50 transition-all duration-300 hover-trigger shadow-xl hover:shadow-accent-400/10"
     >
       <div className="aspect-video overflow-hidden relative">
         <motion.img 

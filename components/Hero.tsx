@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, PenTool } from 'lucide-react';
+import TechMarquee from './TechMarquee';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-accent-600/10 blur-[100px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-600/10 blur-[80px] rounded-full" />
@@ -126,6 +127,10 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
         </motion.div>
+      </div>
+
+      <div className="mt-20 w-full">
+        <TechMarquee />
       </div>
     </section>
   );

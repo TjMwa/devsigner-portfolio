@@ -25,7 +25,7 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-              className="bg-dark-800 p-6 rounded-xl border border-dark-700 hover:border-accent-400/30 transition-colors group hover-trigger"
+              className="bg-dark-800/50 backdrop-blur-md p-6 rounded-xl border border-dark-700 hover:border-accent-400/30 transition-colors group hover-trigger"
             >
               <div className="bg-dark-900 w-12 h-12 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[0_0_20px_rgba(132,204,22,0.2)]">
                 {category.icon}
