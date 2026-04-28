@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 import { PROJECTS } from '../constants';
 import { Project } from '../types';
 
@@ -49,7 +50,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
       whileHover={{ y: -10, scale: 1.02 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className="group relative bg-dark-800/50 backdrop-blur-md rounded-xl overflow-hidden border border-dark-700 hover:border-accent-400/50 transition-all duration-300 hover-trigger shadow-xl hover:shadow-accent-400/10"
+      className="group relative bg-void-800/50 backdrop-blur-md rounded-sm overflow-hidden border border-void-700 hover:border-gold-prime/50 transition-all duration-300 hover-trigger shadow-xl hover:shadow-gold-prime/10"
     >
       <div className="aspect-video overflow-hidden relative">
         <motion.img 
@@ -63,20 +64,34 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4 z-10">
-          <button className="p-3 bg-accent-400 rounded-full text-dark-900 hover:scale-110 transition-transform shadow-lg">
-            <ExternalLink className="w-6 h-6" />
-          </button>
-          <button className="p-3 bg-dark-700 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
-            <Github className="w-6 h-6" />
-          </button>
+        <div className="absolute inset-0 bg-void-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4 z-10">
+          {project.liveUrl && (
+            <a 
+              href={project.liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-gold-prime rounded-full text-void-900 hover:scale-110 transition-transform shadow-lg"
+            >
+              <ExternalLink className="w-6 h-6" />
+            </a>
+          )}
+          {project.githubUrl && (
+            <a 
+              href={project.githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-void-700 rounded-full text-white hover:scale-110 transition-transform shadow-lg"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+          )}
         </div>
       </div>
       
-      <div className="p-6 relative z-10 bg-dark-800">
+      <div className="p-6 relative z-10 bg-void-800/80">
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
-            <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded bg-dark-700 text-accent-400">
+            <span key={tag} className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-sm bg-void-900/50 text-gold-prime border border-gold-prime/20">
               {tag}
             </span>
           ))}
@@ -93,22 +108,41 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
 };
 
 const Portfolio: React.FC = () => {
+  const [filter, setFilter] = React.useState('All');
+  
+  const allTags = ['All', ...new Set(PROJECTS.flatMap(p => p.tags))];
+  
+  const filteredProjects = filter === 'All' 
+    ? PROJECTS 
+    : PROJECTS.filter(p => p.tags.includes(filter));
+
   return (
-    <section id="work" className="py-24 bg-dark-900">
+    <section id="work" className="py-24 bg-void-900">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-16"
-        >
-          <h2 className="text-4xl font-display font-bold text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-accent-400"></div>
-        </motion.div>
+        <SectionHeader 
+          title="Featured Projects" 
+          subtitle="Explore a selection of my recent design and development work."
+        />
+
+        {/* Filter Bar */}
+        <div className="flex flex-wrap gap-4 mb-12">
+          {allTags.map(tag => (
+            <button
+              key={tag}
+              onClick={() => setFilter(tag)}
+              className={`px-4 py-2 rounded-full text-sm font-mono transition-all border ${
+                filter === tag 
+                ? 'bg-gold-prime text-void-900 border-gold-prime' 
+                : 'bg-void-800 text-slate-400 border-void-700 hover:border-gold-prime/50'
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {PROJECTS.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>

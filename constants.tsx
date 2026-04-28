@@ -50,6 +50,8 @@ export const PROJECTS: Project[] = [
     description: 'A financial analytics dashboard for small businesses. Features real-time data visualization using D3.js and a robust Flask backend for secure transaction processing.',
     tags: ['Flask', 'React', 'D3.js', 'PostgreSQL', 'Figma'],
     imageUrl: 'https://picsum.photos/800/600?random=1',
+    githubUrl: 'https://github.com/tysonmwangi',
+    liveUrl: '#'
   },
   {
     id: 2,
@@ -57,6 +59,8 @@ export const PROJECTS: Project[] = [
     description: 'A high-performance REST API for a project management tool. Implemented complex permission systems, websocket notifications, and comprehensive documentation.',
     tags: ['Python', 'Flask', 'WebSockets', 'Redis', 'Docker'],
     imageUrl: 'https://picsum.photos/800/600?random=2',
+    githubUrl: 'https://github.com/tysonmwangi',
+    liveUrl: '#'
   },
   {
     id: 3,
@@ -64,6 +68,8 @@ export const PROJECTS: Project[] = [
     description: 'Complete UX/UI design for a sustainable e-commerce platform. Created a modular design system and interactive prototypes focusing on accessibility.',
     tags: ['Product Design', 'Figma', 'Design Systems', 'Prototyping'],
     imageUrl: 'https://picsum.photos/800/600?random=3',
+    githubUrl: 'https://github.com/tysonmwangi',
+    liveUrl: '#'
   },
   {
     id: 4,
@@ -71,6 +77,8 @@ export const PROJECTS: Project[] = [
     description: 'Cross-platform mobile app architecture for patient monitoring. Designed the interface and built the secure API endpoints for health data synchronization.',
     tags: ['Mobile Design', 'API Architecture', 'Python', 'Security'],
     imageUrl: 'https://picsum.photos/800/600?random=4',
+    githubUrl: 'https://github.com/tysonmwangi',
+    liveUrl: '#'
   }
 ];
 

@@ -15,10 +15,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-40 transition-all duration-300 ${scrolled ? 'bg-dark-900/80 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-40 transition-all duration-300 ${scrolled ? 'bg-void-900/80 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#" className="text-2xl font-display font-bold text-white hover-trigger">
-          Dev<span className="text-accent-400">Signer</span>.
+          Dev<span className="text-gold-prime">Signer</span>.
         </a>
 
         {/* Desktop Menu */}
@@ -27,14 +27,14 @@ const Navbar: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-accent-400 transition-colors hover-trigger"
+              className="text-sm font-mono text-slate-300 hover:text-gold-prime transition-colors hover-trigger"
             >
               {link.name}
             </a>
           ))}
           <a
             href="#contact"
-            className="px-5 py-2 text-sm font-medium text-dark-900 bg-accent-400 rounded-full hover:bg-accent-500 transition-colors hover-trigger"
+            className="px-5 py-2 text-sm font-bold text-void-900 bg-gold-prime rounded-sm hover:bg-gold-light transition-colors hover-trigger"
           >
             Contact
           </a>
@@ -51,12 +51,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Overlay */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-dark-900 border-b border-dark-700 p-6 flex flex-col space-y-4 shadow-2xl">
+        <div className="md:hidden absolute top-full left-0 w-full bg-void-900 border-b border-void-700 p-6 flex flex-col space-y-4 shadow-2xl">
           {NAVIGATION_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-lg font-medium text-slate-300 hover:text-accent-400"
+              className="text-lg font-mono text-slate-300 hover:text-gold-prime"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
           ))}
           <a
             href="#contact"
-            className="inline-block text-center w-full px-5 py-3 font-medium text-dark-900 bg-accent-400 rounded-md"
+            className="inline-block text-center w-full px-5 py-3 font-bold text-void-900 bg-gold-prime rounded-sm"
             onClick={() => setIsOpen(false)}
           >
             Contact

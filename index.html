@@ -11,72 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
-            },
-            colors: {
-              accent: {
-                400: '#a3e635', // Lime 400
-                500: '#84cc16', // Lime 500
-                600: '#65a30d', // Lime 600
-              },
-              dark: {
-                900: '#0f172a', // Slate 900
-                800: '#1e293b', // Slate 800
-                700: '#334155', // Slate 700
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      /* Custom scrollbar for Webkit */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569; 
-      }
-      
-      /* Hide cursor on desktop when custom cursor is active */
-      @media (pointer: fine) {
-        body {
-          cursor: none;
-        }
-        a, button, input, textarea {
-          cursor: none;
-        }
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "framer-motion": "https://esm.sh/framer-motion@^12.31.1"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+    <!-- Tailwind CSS (Vite handles this via index.css) -->
+    <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-dark-900 text-slate-300 antialiased overflow-x-hidden selection:bg-accent-400 selection:text-dark-900">
+  <body class="bg-void-900 text-slate-300 antialiased overflow-x-hidden selection:bg-gold-prime selection:text-void-900">
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

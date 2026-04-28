@@ -1,21 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SectionHeader from './SectionHeader';
 import { SKILL_CATEGORIES } from '../constants';
 
 const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-24 bg-dark-900">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-16"
-        >
-          <h2 className="text-4xl font-display font-bold text-white mb-4">Technical Expertise</h2>
-          <div className="w-20 h-1 bg-accent-400"></div>
-        </motion.div>
+        <SectionHeader
+          title="Technical Expertise"
+          subtitle="A comprehensive overview of my core skills and tools."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {SKILL_CATEGORIES.map((category, index) => (
@@ -31,14 +26,26 @@ const Skills: React.FC = () => {
                 {category.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
-              <ul className="space-y-2">
-                {category.skills.map((skill) => (
-                  <li key={skill} className="flex items-center text-slate-400 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent-600 mr-2"></div>
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill, i) => (
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.3,
+                      delay: (index * 0.1) + (i * 0.05),
+                      ease: "easeOut"
+                    }}
+                    className="px-3 py-1 text-xs font-mono border border-gold-prime/30
+                               text-gold-prime rounded-full bg-void-800
+                               hover:border-gold-prime hover:bg-gold-prime/10 transition-all cursor-default"
+                  >
                     {skill}
-                  </li>
+                  </motion.span>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>

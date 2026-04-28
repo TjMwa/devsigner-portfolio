@@ -1,20 +1,23 @@
 /* index.css - Global Styles for Tyson Mwangi Portfolio */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Instrument Serif', serif;
+  --font-mono: 'JetBrains Mono', monospace;
   
-  --color-accent-400: #a3e635;
-  --color-accent-500: #84cc16;
-  --color-accent-600: #65a30d;
+  --color-void-900: #080810;
+  --color-void-800: #0F0F1A;
+  --color-void-700: #1A1A2E;
   
-  --color-dark-900: #0f172a;
-  --color-dark-800: #1e293b;
-  --color-dark-700: #334155;
+  --color-gold-prime: #C9A84C;
+  --color-gold-light: #E8C97A;
+  --color-gold-dim: #8A6E32;
+  
+  --color-signal: #00FFB3;
 }
 
 /* Custom scrollbar for Webkit */
@@ -23,16 +26,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a; 
+  background: #080810; /* void-900 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155; 
+  background: #1A1A2E; /* void-700 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569; 
+  background: #C9A84C; /* gold-prime */
 }
 
 /* Hide cursor on desktop when custom cursor is active */
@@ -47,8 +50,8 @@
 
 /* Selection aesthetics */
 ::selection {
-  background-color: #a3e635; /* Lime */
-  color: #0f172a; /* Dark Slate */
+  background-color: #C9A84C; /* gold-prime */
+  color: #080810; /* void-900 */
 }
 
 /* Global transitions and base behaviors */
@@ -57,8 +60,9 @@ html {
 }
 
 body {
-  background-color: #0f172a;
+  background-color: #080810;
   color: #cad1e0;
+  font-family: 'Instrument Serif', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
